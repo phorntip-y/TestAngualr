@@ -1,0 +1,28 @@
+
+<section class="container">
+<div class="row">
+  <div class="col-lg-12">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">คอร์ส</th>
+          <th scope="col">วันที่</th>
+          <th scope="col">จำนวนผู้เข้าชม</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of products">
+          <td>{{p.id}}</td>
+          <td>{{p.c_title}}</td>
+          <td>{{p.c_date}}</td>
+          <td>{{p.c_view}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+</div>
+</section>
+
