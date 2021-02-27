@@ -1,10 +1,12 @@
+import { DashboardModule } from './dashboard/dashboard.module';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { NewsComponent } from './news/news.component';
 import { ProductDetailComponent } from './product/product-detail/product-detail.component';
 import { ProductComponent } from './product/product.component';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {path: '',component: HomeComponent},
@@ -12,10 +14,14 @@ const routes: Routes = [
   {path: 'product',component: ProductComponent},
   {path: 'product/:id/:title',component: ProductDetailComponent},
   {path: 'news',component: NewsComponent},
+  {path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule'},
+  {path: '**',component: PagenotfoundComponent},
+
+
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes ,{useHash: true,preloadingStrategy: PreloadAllModules})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

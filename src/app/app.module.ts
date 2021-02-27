@@ -11,6 +11,8 @@ import { from } from 'rxjs';
 import { ProductComponent } from './product/product.component';
 import { ProductDetailComponent } from './product/product-detail/product-detail.component';
 import { NewsComponent } from './news/news.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { AdtobePipe } from './adtobe.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { NewsComponent } from './news/news.component';
     AboutComponent,
     ProductComponent,
     ProductDetailComponent,
-    NewsComponent
+    NewsComponent,
+    PagenotfoundComponent,
+    AdtobePipe
   ],
   imports: [
     BrowserModule,
