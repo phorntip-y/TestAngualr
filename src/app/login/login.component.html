@@ -1,0 +1,6 @@
+      <form *ngIf="isLogin" (ngSubmit)="login()" [formGroup]="loginForm" class="form-inline mt-2 mt-md-0">
+        <input class="form-control me-2" type="text" formControlName ="email" >
+        <input class="form-control me-2" type="password" formControlName="password" >
+        <button [disabled]="loginForm.invalid" class="btn btn-outline-success" type="submit">Login</button>
+      </form>
+      <button *ngIf="!isLogin" (click)="logout()" class="btn btn-outline-success" type="submit">Logout</button>
