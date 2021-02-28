@@ -21,6 +21,7 @@ export class RegisterComponent implements OnInit {
         this.r.navigate(['/']);
       }else{
         alert(data.message);
+
       }
     });
 
